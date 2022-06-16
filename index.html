@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Flixster</title>
+
+        <link rel="stylesheet" href="src/css/style.css">
+    </head>
+    <body>
+        <div class="headerStack">
+            <div id="curtains">
+                <img src="FlixsterIcons/Curtains.png" alt="Curtain Icon">
+            </div>
+            <div id="movieLight">
+                <img src="FlixsterIcons/MovieLight.png" width="352" height="116" alt="Movie Light" />
+            </div>
+            <div class="header">
+                <img src="FlixsterIcons/Camera.png" width="230" height="235" alt="Camera Icon" />
+                <div id="title">Flixster</div>
+            </div>
+        </div>
+        <form id="search">
+            <input id="search-input"/>
+            <button type="submit" id="search-button">Search</button>
+        </form>
+        <div id="search-results"></div>
+        <div id="Navigation" class="popup">
+            <a href="javascript:void(0)" class="xbtn" onclick="closeNavigation()">&times;</a>
+            <div class="popup-content">
+                <a href="#">About_movie</a>
+                <a href="#">rating_blah</a>
+            </div>
+        </div>
+        <div id="movieGrid">
+        </div>
+        <form id="load-more">
+            <button type="button" id="load-button">Load More Movies</button>
+        </form>
+        <script src="src/js/script.js"></script>
+    </body>
+</html>
