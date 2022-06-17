@@ -3,9 +3,9 @@
 
 Submitted by: **Isa Escobar**
 
-Estimated time spent: **10** hours spent in total
+Estimated time spent: **12** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://ileanaescobar.github.io/)
 
 ### Application Features
 
@@ -33,7 +33,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 #### STRETCH FEATURES
 
-- [ ] Deploy website using GitHub Pages. 
+- [x] Deploy website using GitHub Pages. 
 - [x] Allow user to view more details about a movie within a popup.
 - [x] Improve the user experience through CSS & animation.
 - [x] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
