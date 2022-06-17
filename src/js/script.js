@@ -1,7 +1,7 @@
 const imageBaseUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=336ab2e023e28be34655b19be0fd9c48&language=en-US'
 const posterImageurl = 'https://image.tmdb.org/t/p'
 const searchResultsElement = document.querySelector('#search-results');
-const movieElement = document.getElementById("movieGrid");
+const movieElement = document.getElementById("movie-grid");
 const api_key = "336ab2e023e28be34655b19be0fd9c48"
 const search_url = 'https://api.themoviedb.org/3/search/movie?api_key=336ab2e023e28be34655b19be0fd9c48&query=' 
 const video_search_url = 'http://api.themoviedb.org/3/movie/'
@@ -42,9 +42,9 @@ function updateGrid(movies){
         movieElement.innerHTML += `<div class="movie-card">
         <h4 class="movie-title">${movies[i][2]}</h4>
         <img onclick="openNavigation(), embed_video(${movies[i][0]})" onmouseover="this.height = 560" onmouseout="this.height = 500" class="movie-poster" src="${posterImageurl}/w342${movies[i][1]}" alt="${movies[i][2]}" title="${movies[i][2]}"/>
-        <div class="movie-vote">
+        <div class="movie-votes-stack">
         <img class="pop-corn" src="FlixsterIcons/Popcorn_icon.png" width = 20px height = 30px alt="popcorn"/>
-        <h4 class="movie-voteAverage"> ${movies[i][3]}</h4>
+        <h4 class="movie-votes"> ${movies[i][3]}</h4>
         </div>`;
     }
 }
@@ -96,6 +96,12 @@ document.querySelector('#search').addEventListener('submit', (event) => {
     searched = true;
     past_searched = search_results
     fetchSearch(search_results);
+})
+document.querySelector('#search').addEventListener('reset', (event) => {
+    movies = [];
+    movieElement.innerHTML = ''
+    page_number = 0;
+    fetchMovies();
 })
 
 document.querySelector('#load-more').addEventListener('click', (event) => {
