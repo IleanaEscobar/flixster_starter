@@ -4,6 +4,7 @@ const searchResultsElement = document.querySelector('#search-results');
 const movieElement = document.getElementById("movieGrid");
 const api_key = "336ab2e023e28be34655b19be0fd9c48"
 const search_url = 'https://api.themoviedb.org/3/search/movie?api_key=336ab2e023e28be34655b19be0fd9c48&query=' 
+const video_search_url = 'http://api.themoviedb.org/3/movie/'
 var movies = [];
 var page_number = 0;
 var searched = false;
@@ -35,9 +36,12 @@ async function fetchSearch(search_results) {
 
 function updateGrid(movies){
     for( let i = 0; i < movies.length; i++ ) {
+        // console.log(movies[i][4])
+        // overview = decodeURI(movies[i][4])
+        // , ${overview})
         movieElement.innerHTML += `<div class="movie-card">
         <h4 class="movie-title">${movies[i][2]}</h4>
-        <img onclick="openNavigation()" onmouseover="this.height = 560" onmouseout="this.height = 500" class="movie-poster" src="${posterImageurl}/w342${movies[i][1]}" alt="${movies[i][2]}" title="${movies[i][2]}"/>
+        <img onclick="openNavigation(), embed_video(${movies[i][0]})" onmouseover="this.height = 560" onmouseout="this.height = 500" class="movie-poster" src="${posterImageurl}/w342${movies[i][1]}" alt="${movies[i][2]}" title="${movies[i][2]}"/>
         <div class="movie-vote">
         <img class="pop-corn" src="FlixsterIcons/Popcorn_icon.png" width = 20px height = 30px alt="popcorn"/>
         <h4 class="movie-voteAverage"> ${movies[i][3]}</h4>
@@ -52,6 +56,29 @@ function openNavigation() {
     document.getElementById("Navigation").style.height = "0%";
   }
 
+  async function embed_video(id) {
+    console.log("hi");
+    const response = await fetch(video_search_url + id + '/videos?api_key=336ab2e023e28be34655b19be0fd9c48');
+    const results = await response.json()
+    console.log(results)
+    if (!results['results'].isEmpty){
+        video_url = results['results'][0]['key'];
+            document.querySelector(".popup-content").innerHTML = `
+            <div class="iframe-wrap">
+            <p id="trailer-header">Trailer</p>
+            <iframe id="trailer_video" src = "https://www.youtube.com/embed/${video_url}" width = 550 height = 340 frameborder="0" allowfullscreen></iframe>
+            </div>
+            `;
+            // <div class="caption">${overview}</div>
+    }
+}
+    // function add_overview(overview){
+    //     document.querySelector(".popup-content").innerHTML += `
+    //     <p>${overview}<p>
+    //     `;
+    // }
+  
+
 window.onload = function() {
     movies = [];
     movieElement.innerHTML = ''
@@ -60,6 +87,7 @@ window.onload = function() {
 }
 
 document.querySelector('#search').addEventListener('submit', (event) => {
+    console.log('hi')
     page_number = 0
     event.preventDefault();
     movieElement.innerHTML = ''

@@ -27,6 +27,7 @@ body{
     width: 100%;
     height: auto;
     z-index: -1;
+    pointer-events: none;
 }
 #movieLight{
     position: absolute;
@@ -79,7 +80,7 @@ body{
 
  .popup-content {
     position: relative;
-    top: 25%;
+    top: 10%;
     width: 100%;
     text-align: center;
     margin-top: 30px;
@@ -121,3 +122,8 @@ body{
     background-color: brown;
   }
 
+  #trailer-header {
+    font-family: "Fascinate";
+    color: brown;
+    font-size: xx-large;
+  }
