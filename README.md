@@ -43,7 +43,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://ileanaescobar.
 '<a href="https://www.loom.com/share/ca614a1f94d14e0ea1d599e04f255b3f">
     <p>Flixster - 17 June 2022 - Watch Video</p>
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/ca614a1f94d14e0ea1d599e04f255b3f-with-play.gif">
-  </a>/'
+  </a>'
 
 ### Reflection
 
