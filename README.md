@@ -37,7 +37,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://ileanaescobar.
 - [x] Allow user to view more details about a movie within a popup.
 - [x] Improve the user experience through CSS & animation.
 - [x] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
-- [ ] Implement anything else that you can get done to improve the app functionality!
+- [] Implement anything else that you can get done to improve the app functionality!
 
 ### Walkthrough Video
 
@@ -53,7 +53,7 @@ I thiink that the labs did help me prepeare to complete the assignment given tha
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+I think I would implement more feature like a search by genre, or a drop down with options to search by, like language, geographic origin, etc. I would also want to add a way for users to give reviews of the movies with comments and post them underneath the movie description.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
