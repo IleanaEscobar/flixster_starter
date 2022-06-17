@@ -41,14 +41,11 @@ Deployed Application (optional): [Flixster Deployed Site](https://ileanaescobar.
 
 ### Walkthrough Video
 
-<iframe 
+`TODO://` Add the embedded URL code to your animated app walkthrough below, `<iframe 
 src="https://www.loom.com/embed/ca614a1f94d14e0ea1d599e04f255b3f" frameborder="0" 
 webkitallowfullscreen mozallowfullscreen allowfullscreen 
 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-</iframe>
-
-
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
+</iframe>`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
 `ADD_EMBEDDED_CODE_HERE`
 
