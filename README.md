@@ -40,18 +40,10 @@ Deployed Application (optional): [Flixster Deployed Site](https://ileanaescobar.
 - [ ] Implement anything else that you can get done to improve the app functionality!
 
 ### Walkthrough Video
-<a href="https://www.loom.com/share/ca614a1f94d14e0ea1d599e04f255b3f">
+/<a href="https://www.loom.com/share/ca614a1f94d14e0ea1d599e04f255b3f">
     <p>Flixster - 17 June 2022 - Watch Video</p>
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/ca614a1f94d14e0ea1d599e04f255b3f-with-play.gif">
-  </a>
-  
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `<iframe 
-src="https://www.loom.com/embed/ca614a1f94d14e0ea1d599e04f255b3f" frameborder="0" 
-webkitallowfullscreen mozallowfullscreen allowfullscreen 
-style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-</iframe>`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+  </a>/\'
 
 ### Reflection
 
