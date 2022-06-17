@@ -36,7 +36,7 @@ async function fetchSearch(search_results) {
 
 function updateGrid(movies){
     for( let i = 0; i < movies.length; i++ ) {
-        overview = movies[i][4]
+        overview = movies[i][4].replace(/'/g, "&sbquo;")
         movieElement.innerHTML += `<div class="movie-card">
         <h4 class="movie-title">${movies[i][2]}</h4>
         <img onclick="openNavigation(), embed_video(${movies[i][0]}, '${overview}')" onmouseover="this.height = 560" onmouseout="this.height = 500" class="movie-poster" src="${posterImageurl}/w342${movies[i][1]}" alt="${movies[i][2]}" title="${movies[i][2]}"/>
