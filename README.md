@@ -3,7 +3,7 @@
 
 Submitted by: **Isa Escobar**
 
-Estimated time spent: **10** hours spent in total
+Estimated time spent: **12** hours spent in total
 
 Deployed Application (optional): [Flixster Deployed Site](https://ileanaescobar.github.io/)
 
