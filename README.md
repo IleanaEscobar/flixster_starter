@@ -57,7 +57,7 @@ I think I would implement more feature like a search by genre, or a drop down wi
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I think that overall it went well. It performed all the functionalities as it was supposed to and I'm pretty happy with the outcome. I think the biggest difference I noticed between my demo and that of my peers is that I would have liked some more time to spend on the overall visual design since some of my peer's flixsters look 
 
 ### Shout out
 
