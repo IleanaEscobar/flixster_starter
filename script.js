@@ -2,48 +2,48 @@ const imageBaseUrl =
   "https://api.themoviedb.org/3/movie/now_playing?api_key=336ab2e023e28be34655b19be0fd9c48&language=en-US";
 const posterImageurl = "https://image.tmdb.org/t/p";
 const movieElement = document.getElementById("movie-grid");
-const search_url =
+const searchUrl =
   "https://api.themoviedb.org/3/search/movie?api_key=336ab2e023e28be34655b19be0fd9c48&query=";
-const video_search_url = "https://api.themoviedb.org/3/movie/";
+const videoSearchUrl = "https://api.themoviedb.org/3/movie/";
 var movies = [];
-var page_number = 0;
+var pageNumber = 0;
 var searched = false;
-var past_searched = "";
+var pastSearched = "";
 
 async function fetchMovies() {
-  page_number += 1;
-  const response = await fetch(imageBaseUrl + "&page=" + page_number);
+  pageNumber += 1;
+  const response = await fetch(imageBaseUrl + "&page=" + pageNumber);
   const results = await response.json();
-  current_index = movies.length;
+  currentIndex = movies.length;
   for (let i = 0; i < results["results"].length; i++) {
-    movies[current_index] = [
+    movies[currentIndex] = [
       results["results"][i].id,
-      results["results"][i].poster_path,
+      results["results"][i].posterPath,
       results["results"][i].title,
-      results["results"][i].vote_average,
+      results["results"][i].voteAverage,
       results["results"][i].overview,
     ];
-    current_index += 1;
+    currentIndex += 1;
   }
   updateGrid(movies);
 }
 
-async function fetchSearch(search_results) {
-  page_number += 1;
+async function fetchSearch(searchResults) {
+  pageNumber += 1;
   const response = await fetch(
-    search_url + search_results + "&page=" + page_number
+    searchUrl + searchResults + "&page=" + pageNumber
   );
   const results = await response.json();
-  current_index = movies.length;
+  currentIndex = movies.length;
   for (let i = 0; i < results["results"].length; i++) {
-    movies[current_index] = [
+    movies[currentIndex] = [
       results["results"][i].id,
-      results["results"][i].poster_path,
+      results["results"][i].posterPath,
       results["results"][i].title,
-      results["results"][i].vote_average,
+      results["results"][i].voteAverage,
       results["results"][i].overview,
     ];
-    current_index += 1;
+    currentIndex += 1;
   }
   updateGrid(movies);
 }
@@ -53,7 +53,7 @@ function updateGrid(movies) {
     overview = movies[i][4].replace(/'/g, "&sbquo;");
     movieElement.innerHTML += `<div class="movie-card">
         <h4 class="movie-title">${movies[i][2]}</h4>
-        <img onclick="openNavigation(), embed_video(${movies[i][0]}, '${overview}')" onmouseover="this.height = 560" onmouseout="this.height = 500" class="movie-poster" src="${posterImageurl}/w342${movies[i][1]}" alt="${movies[i][2]}" title="${movies[i][2]}"/>
+        <img onclick="openNavigation(), embedVideo(${movies[i][0]}, '${overview}')" onmouseover="this.height = 560" onmouseout="this.height = 500" class="movie-poster" src="${posterImageurl}/w342${movies[i][1]}" alt="${movies[i][2]}" title="${movies[i][2]}"/>
         <div class="movie-votes-stack">
         <img class="pop-corn" src="FlixsterIcons/Popcorn_icon.png" width = 20px height = 30px alt="popcorn"/>
         <h4 class="movie-votes"> ${movies[i][3]}</h4>
@@ -68,17 +68,17 @@ function closeNavigation() {
   document.getElementById("Navigation").style.height = "0%";
 }
 
-async function embed_video(id, overview) {
+async function embedVideo(id, overview) {
   const response = await fetch(
-    video_search_url + id + "/videos?api_key=336ab2e023e28be34655b19be0fd9c48"
+    videoSearchUrl + id + "/videos?api_key=336ab2e023e28be34655b19be0fd9c48"
   );
   const results = await response.json();
   if (!results["results"].isEmpty) {
-    video_url = results["results"][0]["key"];
+    videoUrl = results["results"][0]["key"];
     document.querySelector(".popup-content").innerHTML = `
             <div class="iframe-wrap">
             <p id="trailer-header">Trailer</p>
-            <iframe id="trailer_video" src = "https://www.youtube.com/embed/${video_url}" width = "550" height = "340" frameborder="0" allowfullscreen></iframe>
+            <iframe id="trailer_video" src = "https://www.youtube.com/embed/${videoUrl}" width = "550" height = "340" frameborder="0" allowfullscreen></iframe>
             <p id="description-header">Description:</p>
             <div class="caption">${overview}</div>
             </div>
@@ -89,24 +89,24 @@ async function embed_video(id, overview) {
 window.onload = function () {
   movies = [];
   movieElement.innerHTML = "";
-  page_number = 0;
+  pageNumber = 0;
   fetchMovies();
 };
 
 document.querySelector("#search").addEventListener("submit", (event) => {
-  page_number = 0;
+  pageNumber = 0;
   event.preventDefault();
   movieElement.innerHTML = "";
   movies = [];
-  const search_results = document.getElementById("search-input").value;
+  const searchResults = document.getElementById("search-input").value;
   searched = true;
-  past_searched = search_results;
-  fetchSearch(search_results);
+  pastSearched = searchResults;
+  fetchSearch(searchResults);
 });
 document.querySelector("#search").addEventListener("reset", (event) => {
   movies = [];
   movieElement.innerHTML = "";
-  page_number = 0;
+  pageNumber = 0;
   fetchMovies();
 });
 
@@ -114,7 +114,7 @@ document.querySelector("#load-more").addEventListener("click", (event) => {
   event.preventDefault();
   movies = [];
   if (searched) {
-    fetchSearch(past_searched);
+    fetchSearch(pastSearched);
   } else {
     fetchMovies();
   }
