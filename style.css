@@ -1,146 +1,152 @@
 @font-face {
-    font-family: "Fascinate";
-    src: url("Fascinate-Regular.ttf");
-    }
-
-body{
-    background-color:black;
+  font-family: "Fascinate";
+  src: url("Fascinate-Regular.ttf");
 }
 
-.headerStack{
-    position: relative;
-    width:100%
-}
-.header{
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    width: 90%;
-    height: 30%;
-}
-#curtains{
-    display: flex;
-    justify-content: center;;
-    right: 0;
-    margin-top: -160px;
-    margin-bottom: -430px;
-    width: 100%;
-    height: auto;
-    z-index: -1;
-    pointer-events: none;
-}
-#movieLight{
-    position: absolute;
-    right: 0;
-    margin-top: -3.5px;
-    width: 61%;
-    z-index: -1;
+body {
+  background-color: black;
 }
 
-#title{
-    font-family: "Fascinate";
-    font-size:x-large;
-    position: relative;
-    top: 52px;
+.headerStack {
+  position: relative;
+  width: 100%;
 }
 
-.movie-title{
-    font-family: "Fascinate";
+.header {
+  display: flex;
+  height: 30%;
+  justify-content: center;
+  width: 90%;
 }
 
-#movie-grid{
-    display:grid;
-    color: white;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    grid-gap: 10px;
-    /* padding: 10px; */
+#curtains {
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin-top: -160px;
+  margin-bottom: -430px;
+  pointer-events: none;
+  right: 0;
+  width: 100%;
+  z-index: -1;
 }
 
-.movie-votes-stack{
-    display: flex;
-    justify-content: left;
+#movieLight {
+  margin-top: -3.5px;
+  position: absolute;
+  right: 0;
+  width: 61%;
+  z-index: -1;
 }
 
-.pop-corn{
-    padding: 10px;
+#title {
+  font-family: "Fascinate";
+  font-size: x-large;
+  position: relative;
+  top: 52px;
+}
+
+.movie-title {
+  font-family: "Fascinate";
+}
+
+#movie-grid {
+  color: white;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.movie-votes-stack {
+  display: flex;
+  justify-content: left;
+}
+
+.pop-corn {
+  padding: 10px;
 }
 
 .popup {
-    height: 0;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: rgb(250,250,250);
-    overflow-x: hidden;
-    transition: 0.5s;
- }
+  background-color: rgb(250, 250, 250);
+  height: 0;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  width: 100%;
+  z-index: 1;
+}
 
- .popup-content {
-    position: relative;
-    top: 10%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-  }
+.popup-content {
+  margin-top: 30px;
+  position: relative;
+  text-align: center;
+  top: 10%;
+  width: 100%;
+}
 
 .popup a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: black;
-    display: block;
-    transition: 0.3s;
+  color: black;
+  display: block;
+  font-size: 36px;
+  padding: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+@media screen and (max-height: 450px) {
+  .popup a {
+    font-size: 20px;
   }
 
-  @media screen and (max-height: 450px) {
-    .popup a {font-size: 20px}
-    .popup .xbtn {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
-    }
+  .popup .xbtn {
+    font-size: 40px;
+    right: 35px;
+    top: 15px;
   }
+}
 
-  .movie-poster{
-    width: 100%;
-    height: auto;
-  }
+.movie-poster {
+  height: auto;
+  width: 100%;
+}
 
-  .movie-poster:hover {
-    transform:scale(1.16);
-    transition: 0.5s;
-  }
-  #load-more{
-    display: flex;
-    justify-content: center;
-  }
-  #load-more-movies-btn{
-    font-family: "Fascinate";
-    background-color: brown;
-  }
+.movie-poster:hover {
+  transform: scale(1.16);
+  transition: 0.5s;
+}
 
-  #trailer-header {
-    font-family: "Fascinate";
-    color: brown;
-    font-size: xx-large;
-  }
+#load-more {
+  display: flex;
+  justify-content: center;
+}
 
-  #description-header {
-    font-family: "Fascinate";
-    color: brown;
-    font-size: large;
-    display: flex;
-    justify-content: left;
-    padding-left: 25%;
-  }
+#load-more-movies-btn {
+  background-color: brown;
+  font-family: "Fascinate";
+}
 
-  .caption {
-    display: flex;
-    justify-content: left;
-    padding-left: 25%;
-    padding-right: 25%;
-    text-align: left;
-  }
+#trailer-header {
+  color: brown;
+  font-family: "Fascinate";
+  font-size: xx-large;
+}
+
+#description-header {
+  color: brown;
+  display: flex;
+  font-family: "Fascinate";
+  font-size: large;
+  justify-content: left;
+  padding-left: 25%;
+}
+
+.caption {
+  display: flex;
+  justify-content: left;
+  padding-left: 25%;
+  padding-right: 25%;
+  text-align: left;
+}
